@@ -52,4 +52,4 @@ jobs:
           $userName = ${{ github.event.inputs.user }}
           $managerName = ${{ github.event.inputs.manager }}
           $actionType = ${{ github.event.inputs.actionType }}
-          .\path\to\your\powershell\script.ps1 -GroupName $groupName -UserName $userName -ManagerName $managerName -ActionType $actionType
+          .\path\to\your\powershell\ad_group_script.ps1 -GroupName $groupName -UserName $userName -ManagerName $managerName -ActionType $actionType
