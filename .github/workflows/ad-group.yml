@@ -1,0 +1,55 @@
+name: AD User workflows
+
+on:
+  workflow_dispatch:
+    inputs:
+      actionType:
+        description: 'Add or Remove User'
+        required: true
+        type: choice
+        options:
+          - Add
+          - Remove
+      adGroup:
+        description: 'Choose the AD Group'
+        required: true
+        type: choice
+        options:
+          - Group1
+          - Group2
+          - Group3
+      user:
+        description: 'Select the User'
+        required: true
+        type: choice
+        options:
+          - User1
+          - User2
+          - User3
+      manager:
+        description: 'Select the Manager'
+        required: true
+        type: choice
+        options:
+          - Manager1
+          - Manager2
+          - Manager3
+
+jobs:
+  manage_ad_user:
+    runs-on: windows-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Set up PowerShell
+        uses: actions/setup-powershell@v1
+
+      - name: Run PowerShell script
+        run: |
+          $groupName = ${{ github.event.inputs.adGroup }}
+          $userName = ${{ github.event.inputs.user }}
+          $managerName = ${{ github.event.inputs.manager }}
+          $actionType = ${{ github.event.inputs.actionType }}
+          .\path\to\your\powershell\script.ps1 -GroupName $groupName -UserName $userName -ManagerName $managerName -ActionType $actionType
