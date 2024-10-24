@@ -41,10 +41,10 @@ jobs:
 
     steps:
       - name: Checkout code
-        uses: actions/checkout@v2
+        uses: actions/checkout@v4
 
       - name: Set up PowerShell
-        uses: actions/setup-powershell@v3
+        uses: hugoalh-studio/setup-powershell-toolkit-ghaction@v2.0.0
 
       - name: Run PowerShell script
         run: |
