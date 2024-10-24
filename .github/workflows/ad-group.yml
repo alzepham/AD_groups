@@ -44,7 +44,7 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Set up PowerShell
-        uses: hugoalh-studio/setup-powershell-toolkit-ghaction@v2.0.0
+        uses: actions/setup-powershell@v1
 
       - name: Run PowerShell script
         run: |
